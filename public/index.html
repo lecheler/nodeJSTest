@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 
+https://github.com/ishanray/angularSocketChat 
+https://www.youtube.com/watch?v=6bXpq1xiDsQ
+-->
+<html ng-app="chatApp">
+<head>
+    <title>Chat App</title>
+   <!--  <link rel="stylesheet" href="foundation/css/foundation.css"/> -->
+    <link rel="stylesheet" href="style.css"/>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Chat App</h1>
+    <div ng-controller="ChatCtrl">
+        <h1>USERNAME: {{ username }}</h1>
+        <input ng-model="username" />
+        <div class="chatWrap">
+            <ul>
+                <li ng-repeat="msg in msgs">{{msg}}</li>
+            </ul>
+        </div>
+        <form>
+            <input type="text" ng-model="chat.msg"/>
+            <button ng-click="sendMsg()">Hello</button>
+        </form>
+    </div>
+</body>
+</html>
